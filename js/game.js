@@ -1,26 +1,18 @@
+import { Render } from './render.js';
 var canvas = document.getElementById("myCanvas");
 var ctx = canvas.getContext("2d");
-
 ctx.canvas.width = window.innerWidth;
 ctx.canvas.height = window.innerHeight;
-
-
-// Dibujar cartas
-x = 0
+new Render(ctx);
+var x = 0;
+var y = 100;
 function draw() {
-    ctx.beginPath();
-    ctx.rect(x, 20, 130, 200);
-    ctx.stroke();
+    Render.instance.snakeLink(x, y);
 }
-
-// Dibujar frame
 function frameLoop() {
-    // borrar canvas
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    // Dibujar canvas
-    draw()
-    x++
+    draw();
+    x++;
 }
-
 var interval = setInterval(frameLoop, 10);
-
+//# sourceMappingURL=game.js.map
