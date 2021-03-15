@@ -11,7 +11,6 @@ export class SnakeLink {
     }
     set x(value) {
         this._prevX = this._x;
-        this._prevY = this._y;
         this._x = value;
     }
     get x() {
@@ -21,7 +20,6 @@ export class SnakeLink {
         return this._prevX;
     }
     set y(value) {
-        this._prevX = this._x;
         this._prevY = this._y;
         this._y = value;
     }

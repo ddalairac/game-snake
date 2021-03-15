@@ -2,34 +2,19 @@ export class Board {
     constructor() {
     }
     static get module() {
-        return Board._module;
+        return 30;
     }
-    static get stageSlots() {
-        return Board._stageSlots;
+    static get slotsVertical() {
+        return 10;
     }
-    static set stageSlots(value) {
-        Board._stageSlots = value;
+    static get slotsHorizontal() {
+        return 10;
     }
     static get stageHeight() {
-        return Board.stageSlots[0].length * Board.module;
-        ;
+        return Board.slotsVertical * Board.module;
     }
     static get stageWidth() {
-        return Board.stageSlots[1].length * Board.module;
-        ;
+        return this.slotsHorizontal * Board.module;
     }
 }
-Board._module = 30;
-Board._stageSlots = [
-    [0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-    [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-];
 //# sourceMappingURL=board.js.map

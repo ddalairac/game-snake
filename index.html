@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,9 +8,36 @@
     <title>Snake</title>
     <link rel="stylesheet" type="text/css" href="css/style.css" />
 </head>
-<body>
-    <canvas id="myCanvas" width="80" height="60"></canvas>
 
+<body>
+    <div class="cont">
+        <h1>Snake</h1>
+    </div>
+
+    <canvas id="myCanvas" width="80" height="60"></canvas>
+    <!-- <p id="render-links"></p> -->
+    
+    <div class="control">
+        <button id="up" class="control-btn"><div class="arrow"></div></button>
+        <div class="side-btns">
+            <button id="left" class="control-btn"><div class="arrow"></div></button>
+            <button id="down" class="control-btn"><div class="arrow"></div></button>
+            <button id="right" class="control-btn"><div class="arrow"></div></button>
+        </div>
+        
+        <button id="pause" >Pause</button>
+    </div>
+
+    
+    <div class="modal-cont" style="display: none;">
+        <div class="modal-window">
+            <h2 class="message"></h2>
+            <button id="continue">Continue</button>
+            <button id="start">Restart Game</button>
+        </div>
+    </div>
     <script src="js/main.js" type="module"></script>
+
 </body>
+
 </html>

@@ -1,32 +1,20 @@
 export class Board {
     constructor() {
+
     }
-    private static _module: number = 30;
     public static get module() {
-        return Board._module;
+        return 30;
+    } 
+    public static get slotsVertical(): number {
+        return 10
     }
-    private static _stageSlots: Array<number[]> = [
-        [0, 0, 0, 0, 2, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
-        [0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-    ];
-    public static get stageSlots() {
-        return Board._stageSlots;
+    public static get slotsHorizontal(): number {
+        return 10
     }
-    public static set stageSlots(value) {
-        Board._stageSlots = value;
+    public static get stageHeight(): number {
+        return Board.slotsVertical * Board.module;
     }
-    public static get stageHeight() {
-        return Board.stageSlots[0].length * Board.module;;
-    }
-    public static get stageWidth() {
-        return Board.stageSlots[1].length * Board.module;;
+    public static get stageWidth(): number {
+        return this.slotsHorizontal * Board.module;
     }
 }
