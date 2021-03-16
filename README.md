@@ -1,2 +1,23 @@
-# game-snake
-https://ddalairac.github.io/game-snake-canvas/
+# Game Snake
+
+### Demo
+https://ddalairac.github.io/game-snake/index.html
+
+Develop with typescript from scratch
+
+```sh
+    ______             _              
+   / _____)           | |              
+  ( (____  ____  _____| |  _ _____     
+   \____ \|  _ \(____ | |_/ ) ___ |    
+   _____) ) | | / ___ |  _ (| ____|    
+  (______/|_| |_\_____|_| \_)_____)    
+     ________        ________         
+    /        \      /        \         
+   /  /~~~~\  \    /  /~~~~   \        
+   |  |    |  |    |  |    |  |     / 
+   |  |    |  |    |  |    |  |    // 
+   |  |    \  \____/  /    \  \__/ /   
+  (o  o)    \        /      \     /    
+   \__/      ~~~~~~~~        ~~~~~  
+```
