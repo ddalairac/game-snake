@@ -38,11 +38,13 @@ export class Snake {
         }
         // this.renderLinks()
     }
+    
     // private renderLinks() {
     //     let element = document.getElementById("render-links")
     //     let render = JSON.stringify(this.snakeLinks).split('},{').join('},\n{')
     //     if (element) element.innerText = render
     // }
+
     private moveSnakeHead(link: SnakeLink) {
         switch (this.bufferMov) {
             case eArrow.Down:
@@ -87,8 +89,8 @@ export class Snake {
             // snake
             if (link != headLink && link.y == headLink.y && link.x == headLink.x) {
                 // console.error("Game Over")
-                Game.instance.showModal("Game Over")
                 Game.instance.endGame()
+                Game.instance.showModal("Game Over")
             }
         })
 

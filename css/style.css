@@ -62,7 +62,7 @@ button:hover {
 }
 .control {
     position: absolute;
-    bottom: 20px;
+    bottom: 0;
     left: calc(50% - 147px );
     margin: 15px auto;
     width: 295px;
@@ -74,7 +74,8 @@ button:hover {
 }
 .control-btn {
     width: 96px;
-    height: 96px;
+    height: 76px;
+    overflow: hidden;
 }
 /* .control-btn:focus {
     outline: none;
@@ -90,42 +91,30 @@ button:hover {
 }
 .arrow {
     position: relative;
-    width: 30px;
-    height: 30px;
-    border: 30px solid transparent;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
     background: transparent;
     padding: 0;
     margin: 0 auto;
 }
-#up .arrow {
+#upBTN .arrow {
     border-bottom-color: black;
-    top: -20px;
+    top: -10px;
 }
-#down .arrow {
+#downBTN .arrow {
     border-top-color: black;
-    bottom: -20px;
+    bottom: -10px;
 }
-#left .arrow {
+#leftBTN .arrow {
     border-right-color: black;
-    left: -20px;
+    left: -10px;
 }
-#right .arrow {
+#rightBTN .arrow {
     border-left-color: black;
-    right: -20px;
+    right: -10px;
 }
-/* #up:hover .arrow {
-    border-bottom-color: grey;
-}
-#down:hover .arrow {
-    border-top-color: grey;
-}
-#left:hover .arrow {
-    border-right-color: grey;
-}
-#right:hover .arrow {
-    border-left-color: grey;
-} */
-#pause{
+#pauseBTN{
     width: 100%;
     margin-top: 20px;
 }

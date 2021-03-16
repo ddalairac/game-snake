@@ -5,37 +5,36 @@ export class EventHandler {
         this.setBTNs();
     }
     setBTNs() {
-        let start = document.getElementById("start");
-        let pause = document.getElementById("pause");
-        let continuePlay = document.getElementById("continue");
-        let up = document.getElementById("up");
-        let down = document.getElementById("down");
-        let left = document.getElementById("left");
-        let right = document.getElementById("right");
-        start.addEventListener("click", () => {
+        let startBTN = document.getElementById("startBTN");
+        let pauseBTN = document.getElementById("pauseBTN");
+        let continueBTN = document.getElementById("continueBTN");
+        let upBTN = document.getElementById("upBTN");
+        let downBTN = document.getElementById("downBTN");
+        let leftBTN = document.getElementById("leftBTN");
+        let rightBTN = document.getElementById("rightBTN");
+        startBTN.addEventListener("click", () => {
             Game.instance.starGame();
         });
-        pause.addEventListener("click", () => {
+        pauseBTN.addEventListener("click", () => {
             Game.instance.pauseGame();
         });
-        continuePlay.addEventListener("click", () => {
+        continueBTN.addEventListener("click", () => {
             Game.instance.pauseGame();
         });
-        up.addEventListener("click", () => {
+        upBTN.addEventListener("click", () => {
             EventHandler.arrowEvent(eArrow.Up);
         });
-        down.addEventListener("click", () => {
+        downBTN.addEventListener("click", () => {
             EventHandler.arrowEvent(eArrow.Down);
         });
-        left.addEventListener("click", () => {
+        leftBTN.addEventListener("click", () => {
             EventHandler.arrowEvent(eArrow.Left);
         });
-        right.addEventListener("click", () => {
+        rightBTN.addEventListener("click", () => {
             EventHandler.arrowEvent(eArrow.Right);
         });
     }
     keyboardEventHandler(e) {
-        console.log("Event", e);
         switch (e.code) {
             case eArrow.Left:
                 EventHandler.arrowEvent(eArrow.Left);
@@ -55,9 +54,14 @@ export class EventHandler {
         }
     }
     static arrowEvent(key) {
-        console.log("key", key);
-        if (Game.instance.snake)
-            Game.instance.snake.bufferMov = key;
+        let bufferMov = Game.instance.snake.bufferMov;
+        if (bufferMov == eArrow.Up && key != eArrow.Down ||
+            bufferMov == eArrow.Down && key != eArrow.Up ||
+            bufferMov == eArrow.Left && key != eArrow.Right ||
+            bufferMov == eArrow.Right && key != eArrow.Left) {
+            if (Game.instance.snake)
+                Game.instance.snake.bufferMov = key;
+        }
     }
 }
 export var eArrow;

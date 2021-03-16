@@ -68,8 +68,8 @@ export class Snake {
                 Game.instance.speedUpGame();
             }
             if (link != headLink && link.y == headLink.y && link.x == headLink.x) {
-                Game.instance.showModal("Game Over");
                 Game.instance.endGame();
+                Game.instance.showModal("Game Over");
             }
         });
     }
