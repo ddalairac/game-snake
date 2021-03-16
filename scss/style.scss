@@ -189,7 +189,7 @@ button {
     }
 }
 
-@media (max-width: 800px) and (orientation: landscape) {
+@media (max-width: 850px) and (orientation: landscape) {
     body {
         background-image: url(../img/arcade-h.svg);
         background-position: top;
@@ -198,6 +198,7 @@ button {
     .container {
         // width: 100%;
         width: 600px;
+        min-height: 340px;
         padding: 0;
         margin: 0 auto;
     }
