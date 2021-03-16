@@ -1,93 +1,60 @@
-// @font-face {
-//     font-family: BungeeShade;
-//     src: url(../fonts/BungeeShade-Regular.ttf);
-// }
-@font-face {
-    font-family: PressStart2P;
-    src: url(../fonts/PressStart2P-Regular.ttf);
-}
 @font-face {
     font-family: FreePixel;
     src: url(../fonts/FreePixel.ttf);
 }
+// $green:#bada55;
+$green:green;
 html,
 body {
     height: 100%;
     margin: 0;
     padding: 0;
     border: none;
-    background: black;
-    color: white;
+    perspective: 1000px;
+}
+
+body {
+    background-color: black;
+    background-image: url(../img/arcade.svg);
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: 2130px;
 }
 * {
     box-sizing: border-box;
 }
 
-canvas {
-    display: block;
-    margin: 0 auto;
-    // background: #e1e1e1a8;
-    background: black;
-    border: 1px solid white;
-}
-.canvas-cont {
-    width: 302px;
-    height: 302px;
-}
-
-.modal-cont {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: rgba(0, 0, 0, 0.8);
-    z-index: 100;
-
-    .modal-window {
-        margin: 0 auto;
-        padding: 15px;
-        // border-radius: 5px;
-        width: 280px;
-        background: white;
-        height: fit-content;
-        text-align: center;
-        background: black;
-        border: 1px solid white;
-        .message {
-            // font-weight: 600;
-            font-size: 40px;
-            margin: 0 0 14px 0;
-        }
-    }
-}
 h1 {
     font-family: "FreePixel";
+    margin-top: 16px;
+    margin-bottom: 44px;
+    text-align: center;
 }
 h2 {
-    // font-family: "FreePixel";
+    font-family: "FreePixel";
     // margin: 0;
 }
+
 button {
     font-family: "FreePixel";
     width: 100%;
-    font-size: 24px;
+    min-height: 40px;
+    font-size: 25px;
     border: none;
     background: #ccc;
-    // border-radius: 5px;
-    min-height: 50px;
+    border-radius: 20px;
     margin: 3px auto;
 
-    background: white;
+    // background: white;
     color: black;
-    &:hover {
-        background: rgb(235, 235, 235);
+    // &:hover {
+    //     background: rgb(235, 235, 235);
+    // }
+    &:focus {
+        outline: none;
+        box-shadow: 0 0 3pt 2pt $green;
     }
 }
-
 .container {
     display: flex;
     flex-direction: column;
@@ -100,88 +67,159 @@ button {
     display: flex;
     flex-direction: column;
     height: 100%;
-    justify-content: space-between;
-    // background: red;
-}
-.control {
-    // position: absolute;
-    // bottom: 0;
-    // left: calc(50% - 147px);
-    // margin: 0 auto;
-    width: 302px;
-    height: 218px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    /* background: red; */
-    .control-btn {
-        width: 89px;
-        height: 64px;
-        overflow: hidden;
-        /* &:focus {
-            outline: none;
-        } */
-    }
 
-    .side-btns {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin-top: 10px;
-        .control-btn {
-            margin: 0;
+    .screen {
+        width: 302px;
+        height: 290px;
+        padding: 8px;
+        border-radius: 10px;
+        background: black;
+        position: relative;
+        transform: rotateX(-8deg);
+
+        canvas {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0 auto;
+            // background: #e1e1e1a8;
+            background: black;
+            border: 1px solid white;
+        }
+
+        .modal-cont {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 100;
+
+            .modal-window {
+                margin: 0 auto;
+                padding: 15px;
+                border-radius: 5px;
+                width: 80%;
+                background: white;
+                height: fit-content;
+                text-align: center;
+                background: black;
+                border: 1px solid white;
+                color: white;
+                .message {
+                    // font-weight: 600;
+                    font-size: 40px;
+                    margin: 0 0 14px 0;
+                }
+            }
         }
     }
-    .arrow {
-        position: relative;
-        width: 0;
-        height: 0;
-        border: 12px solid transparent;
-        background: transparent;
+
+    .control {
+        margin-top: 5px;
+        width: 302px;
+        height: 180px;
+        padding: 0 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        transform: rotateX(27deg);
+        border: 1px solid #ccc;
+        /* background: red; */
+
+        button {
+            border-bottom: 2px solid black;
+        }
+        .control-btn {
+            width: 89px;
+            height: 44px;
+            overflow: hidden;
+            border-radius: 20px;
+            background: linear-gradient(14deg, green, #81c518);
+        }
+
+        .side-btns {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 10px;
+            .control-btn {
+                margin: 0;
+            }
+        }
+        .arrow {
+            position: relative;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+            background: transparent;
+            padding: 0;
+            margin: 0 auto;
+        }
+        $position: -7px;
+        #upBTN .arrow {
+            border-bottom-color: black;
+            top: $position;
+        }
+        #downBTN .arrow {
+            border-top-color: black;
+            bottom: $position;
+        }
+        #leftBTN .arrow {
+            border-right-color: black;
+            left: $position;
+        }
+        #rightBTN .arrow {
+            border-left-color: black;
+            right: $position;
+        }
+        #pauseBTN {
+            width: 100%;
+            margin-top: 10px;
+            background: linear-gradient(14deg, red, orangered);
+
+            &:focus {
+                box-shadow: 0 0 3pt 2pt red;
+            }
+        }
+    }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+    body {
+        background-image: url(../img/arcade-h.svg);
+        background-position: top;
+        background-size: 970px;
+    }
+    .container {
+        // width: 100%;
+        width: 600px;
         padding: 0;
         margin: 0 auto;
     }
-    $position: -7px;
-    #upBTN .arrow {
-        border-bottom-color: black;
-        top: $position;
-    }
-    #downBTN .arrow {
-        border-top-color: black;
-        bottom: $position;
-    }
-    #leftBTN .arrow {
-        border-right-color: black;
-        left: $position;
-    }
-    #rightBTN .arrow {
-        border-left-color: black;
-        right: $position;
-    }
-    #pauseBTN {
-        width: 100%;
-        margin-top: 20px;
-    }
-}
-
-@media (max-width:700px) and (orientation: landscape) {
-    .container {
-        width: 100%;
-        padding: 20px;
-    }
     .game {
         width: 100%;
+        height: 263px;
         flex-direction: row;
+        transform: rotateX(35deg);
+        justify-content: space-around;
         align-items: center;
+        .screen {
+            transform: none;
+        }
         .control {
-            height: 302px;
+            width: 280px;
+            height: 270px;
+            transform: none;
+            justify-content: flex-end;
+            padding: 15px;
         }
     }
     h1 {
-        position: absolute;
-        text-align: right;
-        right: 20px;
-        width: 302px;
-        text-align: center;
+        margin: 12px 0;
     }
 }

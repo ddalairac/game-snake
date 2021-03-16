@@ -13,8 +13,16 @@
     <div class="container">
         <h1>CLASSIC SNAKE</h1>
         <div class="game">
-            <div class="canvas-cont">    
+            <div class="screen">
                 <canvas id="myCanvas" width="80" height="60"></canvas>
+
+                <div class="modal-cont" style="display: none;">
+                    <div class="modal-window">
+                        <h2 class="message"></h2>
+                        <button id="continueBTN">CONTINUE</button>
+                        <button id="startBTN">RESTART</button>
+                    </div>
+                </div>
             </div>
             <!-- <p id="render-links"></p> -->
 
@@ -33,16 +41,9 @@
                         <div class="arrow"></div>
                     </button>
                 </div>
-                <button id="pauseBTN">Pause</button>
+                <button id="pauseBTN">PAUSE</button>
             </div>
 
-            <div class="modal-cont" style="display: none;">
-                <div class="modal-window">
-                    <h2 class="message"></h2>
-                    <button id="continueBTN">Continue</button>
-                    <button id="startBTN">Restart</button>
-                </div>
-            </div>
         </div>
     </div>
     <script src="js/main.js" type="module"></script>
