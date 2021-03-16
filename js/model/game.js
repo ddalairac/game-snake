@@ -20,7 +20,6 @@ export class Game {
         return this._instance;
     }
     starGame() {
-        console.log("Start Game");
         this.gameOver = false;
         clearInterval(this.interval);
         this.snake = new Snake();

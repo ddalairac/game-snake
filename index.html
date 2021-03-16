@@ -10,30 +10,39 @@
 </head>
 
 <body>
-    <div class="cont">
-        <h1>Snake</h1>
-    </div>
+    <div class="container">
+        <h1>CLASSIC SNAKE</h1>
+        <div class="game">
+            <div class="canvas-cont">    
+                <canvas id="myCanvas" width="80" height="60"></canvas>
+            </div>
+            <!-- <p id="render-links"></p> -->
 
-    <canvas id="myCanvas" width="80" height="60"></canvas>
-    <!-- <p id="render-links"></p> -->
+            <div class="control">
+                <button id="upBTN" class="control-btn">
+                    <div class="arrow"></div>
+                </button>
+                <div class="side-btns">
+                    <button id="leftBTN" class="control-btn">
+                        <div class="arrow"></div>
+                    </button>
+                    <button id="downBTN" class="control-btn">
+                        <div class="arrow"></div>
+                    </button>
+                    <button id="rightBTN" class="control-btn">
+                        <div class="arrow"></div>
+                    </button>
+                </div>
+                <button id="pauseBTN">Pause</button>
+            </div>
 
-    <div class="control">
-        <button id="upBTN" class="control-btn"><div class="arrow"></div></button>
-        <div class="side-btns">
-            <button id="leftBTN" class="control-btn"><div class="arrow"></div></button>
-            <button id="downBTN" class="control-btn"><div class="arrow"></div></button>
-            <button id="rightBTN" class="control-btn"><div class="arrow"></div></button>
-        </div>
-        
-        <button id="pauseBTN" >Pause</button>
-    </div>
-
-    
-    <div class="modal-cont" style="display: none;">
-        <div class="modal-window">
-            <h2 class="message"></h2>
-            <button id="continueBTN">Continue</button>
-            <button id="startBTN">Restart Game</button>
+            <div class="modal-cont" style="display: none;">
+                <div class="modal-window">
+                    <h2 class="message"></h2>
+                    <button id="continueBTN">Continue</button>
+                    <button id="startBTN">Restart</button>
+                </div>
+            </div>
         </div>
     </div>
     <script src="js/main.js" type="module"></script>

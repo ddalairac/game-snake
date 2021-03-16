@@ -34,7 +34,7 @@ export class Game {
     private continueBTN: HTMLElement
 
     public starGame() {
-        console.log("Start Game")
+        // console.log("Start Game")
         this.gameOver = false
         clearInterval(this.interval)
         this.snake = new Snake()

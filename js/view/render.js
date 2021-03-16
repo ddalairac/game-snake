@@ -21,7 +21,7 @@ export class Render {
         this.ctx.stroke();
         this.ctx.closePath();
     }
-    drawScuare(x, y, color = "grey") {
+    drawScuare(x, y, color = "black") {
         this.ctx.beginPath();
         this.ctx.rect(x, y, Board.module, Board.module);
         this.ctx.fillStyle = color;

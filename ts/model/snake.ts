@@ -6,7 +6,7 @@ import { SnakeLink } from './snake-link.js';
 export class Snake {
     constructor() {
         this.snakeLinks.push(new SnakeLink(0, 0));
-        console.log("New Snake")
+        // console.log("New Snake")
     }
 
     public snakeLinks: Array<SnakeLink> = [];

@@ -7,7 +7,6 @@ export class Snake {
         this.snakeLinks = [];
         this.bufferMov = eArrow.Right;
         this.snakeLinks.push(new SnakeLink(0, 0));
-        console.log("New Snake");
     }
     snakeUpdate() {
         this.snakeUpdatePosition();
