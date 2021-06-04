@@ -2,7 +2,7 @@
 
 ### Demo
 https://ddalairac.github.io/game-snake/index.html
-
+ 
 Develop with typescript from scratch
 
 ```sh
